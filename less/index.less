@@ -57,3 +57,270 @@ html, body {
     height: 100%;
 }
 
+/* Start of custom CSS code */
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat&display=swap');
+
+@heading_font: Montserrat, Verdana;
+@body_font: 'Fira Sans', Arial;
+
+@primary_color: #808080;
+@secondary_color: #e9ecef;
+@accent_color: #f2f2f2;
+
+@primary_text_color: black;
+
+@mobile_screen_size: 500px;
+
+.flex_parent_center_v_h()
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial;
+	color: @primary_text_color;
+}
+
+.resume_container {
+	width: 80vw;
+	margin: 0px auto;
+}
+
+header {
+	display: flex;
+	justify-content: flex-end;
+
+	nav {
+
+		font-family: @heading_font;
+		
+		width: 100%;
+
+		display: flex;
+		justify-content: flex-end;
+
+		@media (max-width: @mobile_screen_size) {
+			justify-content: space-between;
+		}
+
+		a {
+			
+			display: inline-block;
+
+			line-height: 3em;
+			color: @primary_text_color;
+
+			font-size: 1rem;
+			text-align: center;
+			text-decoration: none;
+
+			padding: 0px 2%;
+
+			@media (max-width: @mobile_screen_size) {
+				width: 25%;
+				font-size: 0.8rem;
+			}
+		}
+
+		a:hover, a:active {
+			background-color: @accent_color;
+		}
+	}
+
+}
+
+section {
+	margin: 20px auto;
+
+}
+
+.intro {
+
+	background-color: @secondary_color;
+	padding: 5%;
+
+	img {
+		width: 33%;
+	}
+
+	@media (max-width: @mobile_screen_size) {
+	
+		text-align: center;
+
+		.bio {
+
+			.flex_parent_center_v_h();
+		}
+		
+	}
+
+	h1 {
+		font-family: @heading_font;
+		font-size: 1.8rem;
+
+		margin: 2% auto;
+
+		@media (max-width: @mobile_screen_size) {
+				font-size: 1.2rem;
+			}
+	
+	}
+
+	h2 {
+		font-family: @body_font;
+		font-size: 0.7rem;
+	}
+
+	hr {
+		width: 100%;
+		color: @secondary_color;
+		margin: 4% auto;
+	}
+
+	p {
+		margin-bottom: 2%;
+	}
+
+	a {
+		display: inline-block;
+		
+		border-radius: 2px;
+
+		padding: 2%;
+
+		color: @secondary_color;
+		background-color: @primary_color;
+
+		font-weight: bold;
+
+		text-decoration: none;
+	}
+
+	a:hover, a:active {
+		color: @primary_color;
+		background-color: @accent_color;
+	}
+}
+
+.h2_styles() {
+	font-family: @heading_font;
+	font-size: 1rem;
+
+	margin: 2% 0 ;
+}
+
+.middle_content {
+
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: @mobile_screen_size) {
+		flex-wrap: wrap;
+	}
+
+	div {
+		width: 48%;
+
+		@media (max-width: @mobile_screen_size) {
+			width: 100%;
+
+			margin: 2% auto;
+		}
+	}
+
+	.pitch {
+
+		h2 {
+			.h2_styles();
+		}
+
+		p {
+			line-height: 1.5em;
+		}
+
+	}
+
+	.skills {
+
+		h2 {
+			.h2_styles();
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		li {
+			border: 1px solid @secondary_color;
+			line-height: 2.5em;
+
+			padding-left: 5%;
+		}
+
+	}
+
+}
+
+.history {
+	h2 {
+		.h2_styles();
+	}
+
+	table {
+
+		width: 100%;
+		line-height: 3em;
+
+
+		tr:nth-child(even)
+		{
+			background-color: @accent_color;
+		}
+
+		th {
+			font-weight: bold;
+
+			border-top: 1px solid @secondary_color;
+			border-bottom: 1px solid @secondary_color;
+
+			text-align: left;
+		}
+
+		th, td {
+			padding-left: 2%;
+		}
+
+		.year {
+			font-weight: bold;
+		}
+
+	}
+
+}
+
+.contact {
+	address{
+		p {
+			margin: 2%;
+			line-height: 1.25em;
+		}
+	}
+}
+
+footer {
+
+	height: 4vh;
+
+	.flex_parent_center_v_h();
+
+	background-color: @primary_color;
+
+	p {
+		text-align: center;
+		color: @secondary_color;
+	}
+}
